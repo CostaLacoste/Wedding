@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300&display=swap');
+
+.page {
+  background: #ffffff;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 60px 32px 80px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+/* ── Polaroid single ───────────────────────────────────── */
+.polaroidWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.polaroid {
+  background: #fff;
+  padding: 14px 14px 40px;
+  box-shadow: 2px 4px 20px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 260px;
+}
+
+.polaroidImg {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.polaroidDate {
+  margin-top: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: #3a3a3a;
+  letter-spacing: 0.12em;
+}
+
+/* ── Title ─────────────────────────────────────────────── */
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(16px, 2.2vw, 22px);
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  color: #1a1a1a;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Text blocks ───────────────────────────────────────── */
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.text p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(16px, 1.8vw, 19px);
+  font-weight: 300;
+  line-height: 1.85;
+  color: #2a2a2a;
+  margin: 0;
+}
+
+/* ── Double overlapping polaroids ──────────────────────── */
+.polaroidDouble {
+  position: relative;
+  width: 340px;
+  height: 320px;
+}
+
+.polaroidLeft {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotate(-4deg);
+  z-index: 1;
+  width: 220px;
+}
+
+.polaroidRight {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: rotate(3deg);
+  z-index: 2;
+  width: 200px;
+}
+
+/* ── RSVP Button ───────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.24em;
+  color: rgba(255,255,255,0.9);
+  background: #7a7a6a;
+  border-radius: 50px;
+  padding: 18px 100px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #5a5a4a;
+}
+
+/* ── Mobile ────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .page { padding: 40px 20px 60px; gap: 36px; }
+  .polaroid { width: 200px; }
+  .polaroidDouble { width: 280px; height: 270px; }
+  .polaroidLeft { width: 180px; }
+  .polaroidRight { width: 165px; }
+  .btn { padding: 16px 60px; }
+}

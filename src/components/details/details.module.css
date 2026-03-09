@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300&display=swap');
+
+.page {
+  background: #ffffff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* ── Hero photo ────────────────────────────────────────── */
+.hero {
+  width: 100%;
+  height: 40vw;
+  min-height: 280px;
+  max-height: 520px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ── Invite card ───────────────────────────────────────── */
+.inviteCard {
+  background: #8a8a72;
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+}
+
+.inviteText {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.8;
+  max-width: 500px;
+  margin: 0;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.24em;
+  color: rgba(255,255,255,0.88);
+  background: rgba(200,195,175,0.45);
+  backdrop-filter: blur(4px);
+  border-radius: 50px;
+  padding: 16px 80px;
+  transition: background 0.3s;
+}
+.btn:hover { background: rgba(200,195,175,0.7); }
+
+/* ── Building photo ────────────────────────────────────── */
+.buildingPhoto {
+  width: 100%;
+  height: 36vw;
+  min-height: 240px;
+  max-height: 480px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ── Info grid ─────────────────────────────────────────── */
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 60px 80px;
+  gap: 40px;
+  background: #ffffff;
+}
+
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.infoLabel {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(13px, 1.4vw, 15px);
+  font-weight: 400;
+  color: #3a3a3a;
+  margin: 12px 0 0;
+  letter-spacing: 0.04em;
+}
+
+.infoText {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(13px, 1.4vw, 15px);
+  font-weight: 300;
+  color: #5a5a5a;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Travel & Stay banner ──────────────────────────────── */
+.travelBanner {
+  position: relative;
+  width: 100%;
+  height: 36vw;
+  min-height: 220px;
+  max-height: 440px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.travelOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(40,45,30,0.38);
+}
+
+.travelTitle {
+  position: relative;
+  z-index: 1;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2.8vw, 32px);
+  font-weight: 300;
+  letter-spacing: 0.24em;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* ── Travel blocks ─────────────────────────────────────── */
+.travelGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.travelBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 320px;
+}
+
+.travelBlockReverse .travelImg {
+  order: -1;
+}
+
+.travelText {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(14px, 1.5vw, 17px);
+  font-weight: 300;
+  line-height: 1.85;
+  color: #3a3a3a;
+  padding: 48px 60px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.travelImg {
+  background-size: cover;
+  background-position: center;
+  min-height: 280px;
+}
+
+/* ── Tablet (≤ 900px) ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .inviteCard { padding: 48px 40px; }
+  .infoGrid { padding: 48px 40px; gap: 24px; }
+  .travelText { padding: 36px 32px; }
+}
+
+/* ── Mobile (≤ 600px) ──────────────────────────────────── */
+@media (max-width: 600px) {
+  .inviteCard { padding: 40px 24px; }
+  .btn { padding: 14px 40px; width: 100%; text-align: center; }
+  .infoGrid { grid-template-columns: 1fr; padding: 40px 24px; }
+  .travelBlock { grid-template-columns: 1fr; }
+  .travelBlockReverse .travelImg { order: -1; }
+  .travelText { padding: 28px 24px; }
+  .travelImg { min-height: 220px; }
+}

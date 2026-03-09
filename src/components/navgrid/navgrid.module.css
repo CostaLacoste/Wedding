@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Jost:wght@200;300&display=swap');
+
+/* ── Grid container ────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 16px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* ── Card ──────────────────────────────────────────────── */
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  aspect-ratio: 1 / 1;
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #c8c8c8; /* fallback while image loads */
+
+  /* subtle zoom on hover */
+  transition: transform 0.5s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+/* ── Overlay — darkens slightly on hover ───────────────── */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.12);
+  transition: background 0.4s ease;
+}
+
+.card:hover::before {
+  background: rgba(0, 0, 0, 0.24);
+}
+
+/* ── Label ─────────────────────────────────────────────── */
+.label {
+  position: relative;
+  z-index: 1;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(14px, 1.8vw, 22px);
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+
+  /* underline matching screenshot */
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+
+  transition: border-color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.card:hover .label {
+  border-color: #ffffff;
+  letter-spacing: 0.22em;
+}
+
+/* ── Tablet (≤ 900px) ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .grid {
+    gap: 12px;
+    padding: 12px;
+  }
+}
+
+/* ── Mobile (≤ 600px) ──────────────────────────────────── */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .card {
+    aspect-ratio: 4 / 3;
+  }
+
+  .label {
+    font-size: clamp(16px, 5vw, 22px);
+  }
+}

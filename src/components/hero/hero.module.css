@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap');
+
+/* ── Hero section ──────────────────────────────────────── */
+.hero {
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  box-sizing: border-box;
+}
+
+/* ── Title ─────────────────────────────────────────────── */
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 10vw, 120px);
+  font-weight: 400;
+  color: #000000 !important;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-align: center;
+  margin: 0;
+
+  /* subtle fade-in on load */
+  animation: fadeIn 1s ease both;
+}
+
+/* The & sits naturally between the names, same weight */
+.ampersand {
+  font-weight: 400;
+}
+
+/* ── Animation ─────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Tablet (≤ 900px) ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero {
+    padding: 64px 32px;
+  }
+}
+
+/* ── Mobile (≤ 600px) ──────────────────────────────────── */
+@media (max-width: 600px) {
+  .hero {
+    padding: 48px 20px;
+  }
+
+  .title {
+    font-size: clamp(40px, 13vw, 72px);
+    letter-spacing: 0.02em;
+  }
+}

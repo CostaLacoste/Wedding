@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:wght@300;400&family=Jost:wght@200;300&display=swap');
+
+/* ── Base ──────────────────────────────────────────────── */
+.header {
+  background-color: #5e5d56;
+  width: 100%;
+  height: 56px;
+  padding: 0 48px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Brand (left) ──────────────────────────────────────── */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+.monogram {
+  font-family: 'IM Fell English', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.date {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* ── Nav (right) ───────────────────────────────────────── */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: clamp(28px, 4vw, 64px);
+}
+
+.navLink {
+  text-decoration: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.8);
+
+  /* underline matching screenshot */
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+  transition: color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.navLink:hover,
+.navLink.active {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* ── Burger (hidden on desktop) ────────────────────────── */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.line {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.85);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.lineTopOpen { transform: translateY(6.5px) rotate(45deg); }
+.lineMidOpen { opacity: 0; transform: scaleX(0); }
+.lineBotOpen { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ── Mobile dropdown ───────────────────────────────────── */
+.mobileMenu {
+  background-color: #5e5d56;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.35s ease;
+}
+
+.mobileMenuOpen {
+  max-height: 280px;
+  opacity: 1;
+}
+
+.mobileLink {
+  text-decoration: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 15px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.mobileLink:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+/* ── Tablet (≤ 900px) ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .header {
+    padding: 0 32px;
+  }
+
+  .navList {
+    gap: clamp(16px, 2.5vw, 36px);
+  }
+
+  .navLink {
+    font-size: 10px;
+  }
+}
+
+/* ── Mobile (≤ 640px) ──────────────────────────────────── */
+@media (max-width: 640px) {
+  .header {
+    padding: 0 20px;
+    height: 52px;
+  }
+
+  /* hide desktop nav, show burger */
+  .nav {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .monogram {
+    font-size: 22px;
+  }
+
+  .date {
+    font-size: 12px;
+  }
+}

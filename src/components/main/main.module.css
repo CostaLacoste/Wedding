@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
+
+/* ── Main section ──────────────────────────────────────── */
+.main {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  /* Replace with your actual image path */
+  background-image: url('../../images/image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Subtle dark overlay for text readability ──────────── */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+/* ── Content block ─────────────────────────────────────── */
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 40px 24px;
+  max-width: 600px;
+}
+
+/* ── Invite text ───────────────────────────────────────── */
+.invite {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2.4vw, 26px);
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1.7;
+  margin: 0 0 32px;
+  letter-spacing: 0.01em;
+}
+
+/* ── Thin divider ──────────────────────────────────────── */
+.divider {
+  width: 1px;
+  height: 0;
+  border: none;
+  /* acts as vertical spacer — actual gap comes from margins */
+  margin: 0 auto 32px;
+}
+
+/* ── Date & venue ──────────────────────────────────────── */
+.details {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2.4vw, 26px);
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1.7;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+/* ── Fade-in animation ─────────────────────────────────── */
+.content {
+  animation: fadeIn 1.2s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Tablet (≤ 900px) ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .main {
+    min-height: 80vh;
+  }
+}
+
+/* ── Mobile (≤ 600px) ──────────────────────────────────── */
+@media (max-width: 600px) {
+  .main {
+    min-height: 70vh;
+  }
+
+  .invite,
+  .details {
+    font-size: clamp(16px, 4.5vw, 22px);
+  }
+}
