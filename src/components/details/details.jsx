@@ -1,9 +1,9 @@
 import styles from "./details.module.css";
 import bgHero   from "../../images/details.png";
-import bgTravel from "../../images/card1.png";
-import imgTravel1 from "../../images/card4.png";
-import imgTravel2 from "../../images/card2.png";
-import bgRegistry from "../../images/card3.png";
+import bgTravel from "../../images/trdet.png";
+import imgTravel1 from "../../images/det1.png";
+import imgTravel2 from "../../images/det2.png";
+import bgRegistry from "../../images/reg.png";
 
 export default function Details() {
   return (
