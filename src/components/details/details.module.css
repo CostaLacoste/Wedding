@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300&display=swap');
 
 .page {
-  background: #ffffff;
+  background: #111111;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -70,31 +70,38 @@
 .infoGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 60px 80px;
-  gap: 40px;
-  background: #ffffff;
+  padding: 16px;
+  gap: 16px;
+  background: #111111;
 }
 
 .infoCol {
+  background: #d6d4c8;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
+  padding: 40px 48px;
 }
 
 .infoLabel {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(13px, 1.4vw, 15px);
   font-weight: 400;
-  color: #3a3a3a;
-  margin: 12px 0 0;
+  color: #2a2a2a;
+  margin: 16px 0 0;
   letter-spacing: 0.04em;
+}
+
+.infoLabel:first-child {
+  margin-top: 0;
 }
 
 .infoText {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(13px, 1.4vw, 15px);
   font-weight: 300;
-  color: #5a5a5a;
+  color: #4a4a4a;
   line-height: 1.7;
   margin: 0;
 }
@@ -134,13 +141,18 @@
 .travelGrid {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 16px;
+  padding: 16px;
+  background: #111111;
 }
 
 .travelBlock {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 320px;
+  background: #d6d4c8;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .travelBlockReverse .travelImg {
@@ -165,20 +177,91 @@
   min-height: 280px;
 }
 
+/* ── Registry ──────────────────────────────────────────── */
+.registry {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.registryOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 30, 20, 0.62);
+}
+
+.registryContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  padding: 60px 80px;
+  max-width: 600px;
+}
+
+.registryTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2.8vw, 30px);
+  font-weight: 300;
+  letter-spacing: 0.28em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.registryText {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(14px, 1.6vw, 17px);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.btnDark {
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(4px);
+  border-radius: 50px;
+  padding: 14px 60px;
+  transition: background 0.3s;
+}
+.btnDark:hover { background: rgba(255,255,255,0.28); }
+
 /* ── Tablet (≤ 900px) ──────────────────────────────────── */
 @media (max-width: 900px) {
   .inviteCard { padding: 48px 40px; }
-  .infoGrid { padding: 48px 40px; gap: 24px; }
+  .infoCol { padding: 32px 36px; }
   .travelText { padding: 36px 32px; }
+  .registryContent { padding: 48px 40px; }
 }
 
 /* ── Mobile (≤ 600px) ──────────────────────────────────── */
 @media (max-width: 600px) {
   .inviteCard { padding: 40px 24px; }
-  .btn { padding: 14px 40px; width: 100%; text-align: center; }
-  .infoGrid { grid-template-columns: 1fr; padding: 40px 24px; }
+  .btn { padding: 14px 40px; width: 100%; text-align: center; box-sizing: border-box; }
+  .infoGrid { grid-template-columns: 1fr; padding: 12px; gap: 12px; }
+  .infoCol { padding: 28px 24px; }
+  .travelGrid { padding: 12px; gap: 12px; }
   .travelBlock { grid-template-columns: 1fr; }
   .travelBlockReverse .travelImg { order: -1; }
   .travelText { padding: 28px 24px; }
   .travelImg { min-height: 220px; }
+  .registryContent { padding: 40px 24px; }
+  .btnDark { padding: 14px 40px; width: 100%; text-align: center; box-sizing: border-box; }
 }

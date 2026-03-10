@@ -1,8 +1,9 @@
 import styles from "./details.module.css";
-import bgHero   from "../../images/card3.png";
+import bgHero   from "../../images/details.png";
 import bgTravel from "../../images/card1.png";
 import imgTravel1 from "../../images/card4.png";
 import imgTravel2 from "../../images/card2.png";
+import bgRegistry from "../../images/card3.png";
 
 export default function Details() {
   return (
@@ -82,6 +83,23 @@ export default function Details() {
             Cozy &amp; quaint, right in town. The Fox &amp; Finch Manor — A
             historic stay just minutes from the venue.
           </p>
+        </div>
+      </div>
+
+      {/* Registry */}
+      <div
+        className={styles.registry}
+        style={{ backgroundImage: `url(${bgRegistry})` }}
+      >
+        <div className={styles.registryOverlay} />
+        <div className={styles.registryContent}>
+          <h2 className={styles.registryTitle}>REGISTRY</h2>
+          <p className={styles.registryText}>
+            Your presence is the most cherished gift. Should you wish to
+            contribute, we've created a honeymoon registry to help us
+            embark on a memorable adventure to the Amalfi Coast.
+          </p>
+          <a href="#registry" className={styles.btnDark}>GO TO REGISTRY</a>
         </div>
       </div>
 
