@@ -1,13 +1,13 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
-import Header   from './components/header/header';
-import Footer   from './components/footer/footer';
+import Header   from './assets/header/header';
+import Footer   from './assets/footer/footer';
 
-import Home     from './components/home/home';
-import OurStory from './components/OurStory/ourstory';
-import Details  from './components/details/details';
-import RSVP from './components/rsvp/rsvp';
+import Home     from './pages/home/home';
+import OurStory from './pages/OurStory/ourstory';
+import Details  from './pages/details/details';
+import RSVP from './pages/rsvp/rsvp';
 
 function App() {
   return (
