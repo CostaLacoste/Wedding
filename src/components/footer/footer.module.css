@@ -12,9 +12,6 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-
-  /* thin dark top border matching screenshot */
-  border-top: 2px solid #3a3a2e;
 }
 
 /* ── Monogram ──────────────────────────────────────────── */

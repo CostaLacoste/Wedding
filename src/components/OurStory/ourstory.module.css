@@ -13,36 +13,6 @@
   gap: 48px;
 }
 
-/* ── Polaroid single ───────────────────────────────────── */
-.polaroidWrap {
-  display: flex;
-  justify-content: center;
-}
-
-.polaroid {
-  background: #fff;
-  padding: 14px 14px 40px;
-  box-shadow: 2px 4px 20px rgba(0,0,0,0.12);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 260px;
-}
-
-.polaroidImg {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-}
-
-.polaroidDate {
-  margin-top: 12px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 15px;
-  font-weight: 300;
-  color: #3a3a3a;
-  letter-spacing: 0.12em;
-}
-
 /* ── Title ─────────────────────────────────────────────── */
 .title {
   font-family: 'Cormorant Garamond', serif;
@@ -71,30 +41,7 @@
   margin: 0;
 }
 
-/* ── Double overlapping polaroids ──────────────────────── */
-.polaroidDouble {
-  position: relative;
-  width: 340px;
-  height: 320px;
-}
 
-.polaroidLeft {
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: rotate(-4deg);
-  z-index: 1;
-  width: 220px;
-}
-
-.polaroidRight {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  transform: rotate(3deg);
-  z-index: 2;
-  width: 200px;
-}
 
 /* ── RSVP Button ───────────────────────────────────────── */
 .btn {

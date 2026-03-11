@@ -1,4 +1,6 @@
 import styles from "./ourstory.module.css";
+import polaroid1 from "../../images/Polaroid.png";
+import polaroid2 from "../../images/polaroid2.png";
 
 export default function OurStory() {
   return (
@@ -7,8 +9,7 @@ export default function OurStory() {
       {/* Polaroid 1 */}
       <div className={styles.polaroidWrap}>
         <div className={styles.polaroid}>
-          <div className={styles.polaroidImg} style={{ background: "#d4cfc8" }} />
-          <span className={styles.polaroidDate}>06/10/19</span>
+          <img src={polaroid2} alt="polaroid" />
         </div>
       </div>
 
@@ -36,12 +37,7 @@ export default function OurStory() {
 
       {/* Polaroids 2 — overlapping */}
       <div className={styles.polaroidDouble}>
-        <div className={`${styles.polaroid} ${styles.polaroidLeft}`}>
-          <div className={styles.polaroidImg} style={{ background: "#1a1a1a" }} />
-        </div>
-        <div className={`${styles.polaroid} ${styles.polaroidRight}`}>
-          <div className={styles.polaroidImg} style={{ background: "#c8d4e0" }} />
-        </div>
+        <img src={polaroid1} alt="polaroid" />
       </div>
 
       {/* Closing text */}
