@@ -1,5 +1,6 @@
 import styles from "./details.module.css";
 import bgHero   from "../../images/details.png";
+import home from "../../images/Home.png";
 import bgTravel from "../../images/trdet.png";
 import imgTravel1 from "../../images/det1.png";
 import imgTravel2 from "../../images/det2.png";
@@ -28,7 +29,7 @@ export default function Details() {
       {/* Building photo */}
       <div
         className={styles.buildingPhoto}
-        style={{ backgroundImage: `url(${bgHero})` }}
+        style={{ backgroundImage: `url(${home})` }}
       />
 
       {/* Info grid */}

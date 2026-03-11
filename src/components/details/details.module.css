@@ -21,7 +21,7 @@
 /* ── Invite card ───────────────────────────────────────── */
 .inviteCard {
   background: #8a8a72;
-  padding: 60px 80px;
+  padding: 120px 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +31,7 @@
 
 .inviteText {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(16px, 1.8vw, 20px);
+  font-size: clamp(20px, 2.2vw, 26px);
   font-weight: 300;
   font-style: italic;
   color: rgba(255,255,255,0.92);
@@ -72,7 +72,7 @@
   grid-template-columns: 1fr 1fr;
   padding: 16px;
   gap: 16px;
-  background: #111111;
+  background: #FFFFFF;
 }
 
 .infoCol {
@@ -130,9 +130,9 @@
   position: relative;
   z-index: 1;
   font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 0.01em;
   font-size: clamp(18px, 2.8vw, 32px);
   font-weight: 300;
-  letter-spacing: 0.24em;
   color: #ffffff;
   margin: 0;
 }
@@ -143,7 +143,7 @@
   flex-direction: column;
   gap: 16px;
   padding: 16px;
-  background: #111111;
+  background: #FFFFFF;
 }
 
 .travelBlock {
