@@ -27,7 +27,7 @@ export default function OurStory() {
           boots and Jenny just stopped and started tying my laces for me.
           That's when I knew. It wasn't some grand gesture. It was just…us.
         </p>
-        <p>
+        <p lassName={styles.boxed}>
           We've built a life together. It's chill, it's real. We love low-key
           adventures, but also appreciate good wine with friends. From
           those first hikes to figuring out life together under countless starry

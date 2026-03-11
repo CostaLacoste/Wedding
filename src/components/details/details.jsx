@@ -12,9 +12,12 @@ export default function Details() {
 
       {/* Hero photo */}
       <div
-        className={styles.hero}
-        style={{ backgroundImage: `url(${bgHero})` }}
-      />
+      className={styles.hero}
+      style={{ backgroundImage: `url(${bgHero})` }}
+    >
+      <div className={styles.heroOverlay} />
+      <h1 className={styles.heroTitle}>DETAILS</h1>
+    </div>
 
       {/* Invite card */}
       <div className={styles.inviteCard}>

@@ -41,7 +41,10 @@
   margin: 0;
 }
 
-
+.boxed {
+  border: 1px solid #3a3a2e;
+  padding: 32px 40px;
+}
 
 /* ── RSVP Button ───────────────────────────────────────── */
 .btn {
