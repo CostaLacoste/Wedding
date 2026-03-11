@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300&display=swap');
+
+.page {
+  background: #ffffff;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 24px;
+  box-sizing: border-box;
+}
+
+/* ── Header ────────────────────────────────────────────── */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 56px;
+  text-align: center;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 300;
+  letter-spacing: 0.28em;
+  color: #1a1a12;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.16em;
+  color: #7a7a6a;
+  margin: 0;
+}
+
+/* ── Form ──────────────────────────────────────────────── */
+.form {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #3a3a2e;
+}
+
+.input {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #1a1a12;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #3a3a2e;
+  padding: 10px 0;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+  appearance: none;
+}
+
+.input:focus {
+  border-bottom-color: #8a8a72;
+}
+
+.input::placeholder {
+  color: #b0ae9e;
+  font-style: italic;
+}
+
+.textarea {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #1a1a12;
+  background: transparent;
+  border: 1px solid #3a3a2e;
+  padding: 16px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  resize: none;
+  transition: border-color 0.2s;
+}
+
+.textarea:focus {
+  border-color: #8a8a72;
+}
+
+.textarea::placeholder {
+  color: #b0ae9e;
+  font-style: italic;
+}
+
+/* ── Attending buttons ─────────────────────────────────── */
+.radioGroup {
+  display: flex;
+  gap: 16px;
+}
+
+.radioBtn {
+  flex: 1;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  color: #3a3a2e;
+  background: transparent;
+  border: 1px solid #3a3a2e;
+  border-radius: 50px;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.radioBtn:hover {
+  background: #f0ede4;
+}
+
+.radioBtnActive {
+  background: #8a8a72;
+  border-color: #8a8a72;
+  color: #ffffff;
+}
+
+/* ── Submit button ─────────────────────────────────────── */
+.btn {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.24em;
+  color: #ffffff;
+  background: #8a8a72;
+  border: none;
+  border-radius: 50px;
+  padding: 18px 0;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 8px;
+}
+
+.btn:hover {
+  background: #6e6e5a;
+}
+
+/* ── Thank you ─────────────────────────────────────────── */
+.thankYou {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  padding: 80px 24px;
+}
+
+.thankYouText {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 300;
+  font-style: italic;
+  color: #5a5a4a;
+  line-height: 1.8;
+  max-width: 400px;
+  margin: 0;
+}
+
+/* ── Mobile ────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .page { padding: 60px 24px; }
+  .header { margin-bottom: 40px; }
+  .radioGroup { flex-direction: column; }
+  .form { gap: 24px; }
+}
