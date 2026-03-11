@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./header.module.css";
+import logo from "../../images/J&J.svg";
 
 const NAV_LINKS = [
   { label: "HOME",      to: "/" },
@@ -17,9 +18,7 @@ export default function Header() {
     <>
       <header className={styles.header}>
         <div className={styles.brand}>
-          <Link to="/" className={styles.monogramLink}>
-            <span className={styles.monogram}>J&amp;J</span>
-          </Link>
+          <img src={logo} alt="J&J" />
           <span className={styles.date}>June 23rd, 2025</span>
         </div>
 
