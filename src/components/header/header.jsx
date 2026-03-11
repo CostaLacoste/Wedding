@@ -19,7 +19,7 @@ export default function Header() {
       <header className={styles.header}>
         <div className={styles.brand}>
           <img src={logo} alt="J&J" />
-          <span className={styles.date}>June 23rd, 2025</span>
+          <span className={styles.date}>September 20th, 2025</span>
         </div>
 
         <nav className={styles.nav} aria-label="Main navigation">
