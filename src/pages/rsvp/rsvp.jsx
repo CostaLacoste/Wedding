@@ -1,9 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { loginApi, verifyCodeApi } from "../../api/authApi";
 import styles from "./rsvp.module.css";
 
 export default function RSVP() {
   const [attending, setAttending] = useState(null);
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    loginApi({ email: "test@example.com", password: "123456" })
+      .then((res) => console.log("login ok:", res))
+      .catch((err) => console.log("login err:", err));
+
+    loginApi({ email: "blocked@example.com", password: "123456" })
+      .then((res) => console.log("blocked ok:", res))
+      .catch((err) => console.log("blocked err:", err));
+
+    verifyCodeApi({ code: "111111" })
+      .then((res) => console.log("code ok:", res))
+      .catch((err) => console.log("code err:", err));
+  }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
