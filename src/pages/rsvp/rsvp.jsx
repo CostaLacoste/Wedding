@@ -1,28 +1,35 @@
-import { useEffect, useState } from "react";
-import { loginApi, verifyCodeApi } from "../../api/authApi";
+import { useState } from "react";
+import { loginApi } from "../../api/authApi";
 import styles from "./rsvp.module.css";
 
 export default function RSVP() {
   const [attending, setAttending] = useState(null);
   const [submitted, setSubmitted] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  useEffect(() => {
-    loginApi({ email: "test@example.com", password: "123456" })
-      .then((res) => console.log("login ok:", res))
-      .catch((err) => console.log("login err:", err));
+  function getErrorMessage(apiError) {
+    if (apiError?.status === 403) return "This user is blocked.";
+    if (apiError?.status === 500) return "Server error. Please try again later.";
+    if (apiError?.status === 0) return "Network error. Check your internet connection.";
+    if (apiError?.status === 401) return "Wrong email.";
+    return "Something went wrong. Please try again.";
+  }
 
-    loginApi({ email: "blocked@example.com", password: "123456" })
-      .then((res) => console.log("blocked ok:", res))
-      .catch((err) => console.log("blocked err:", err));
-
-    verifyCodeApi({ code: "111111" })
-      .then((res) => console.log("code ok:", res))
-      .catch((err) => console.log("code err:", err));
-  }, []);
-
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    setSubmitted(true);
+    setError("");
+    setIsLoading(true);
+
+    try {
+      await loginApi({ email, password: "123456" });
+      setSubmitted(true);
+    } catch (apiError) {
+      setError(getErrorMessage(apiError));
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   if (submitted) {
@@ -55,7 +62,14 @@ export default function RSVP() {
 
         <div className={styles.field}>
           <label className={styles.label}>Email</label>
-          <input className={styles.input} type="email" placeholder="your@email.com" required />
+          <input
+            className={styles.input}
+            type="email"
+            placeholder="your@email.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
         </div>
 
         <div className={styles.field}>
@@ -90,7 +104,11 @@ export default function RSVP() {
           </div>
         )}
 
-        <button type="submit" className={styles.btn}>SEND RSVP</button>
+        {error && <p className={styles.subtitle}>{error}</p>}
+
+        <button type="submit" className={styles.btn} disabled={isLoading}>
+          {isLoading ? "SENDING..." : "SEND RSVP"}
+        </button>
 
       </form>
     </main>
