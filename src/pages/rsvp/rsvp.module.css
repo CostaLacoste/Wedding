@@ -82,9 +82,26 @@
   border-bottom-color: #8a8a72;
 }
 
+.inputError {
+  border-bottom-color: #d33b3b;
+}
+
+.inputError:focus {
+  border-bottom-color: #d33b3b;
+}
+
 .input::placeholder {
   color: #b0ae9e;
   font-style: italic;
+}
+
+.fieldError {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: #d33b3b;
+  margin: 4px 0 0;
 }
 
 .textarea {

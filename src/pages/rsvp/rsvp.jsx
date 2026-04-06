@@ -6,8 +6,13 @@ export default function RSVP() {
   const [attending, setAttending] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
+  const phoneRegex = /^\+1[\s-]?\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}$/;
+  const allowedEmailDomains = ["icloud.com", "gmail.com", "hotmail.com", "yahoo.com", "rambler.com"];
 
   function getErrorMessage(apiError) {
     if (apiError?.status === 403) return "This user is blocked.";
@@ -20,6 +25,20 @@ export default function RSVP() {
   async function handleSubmit(e) {
     e.preventDefault();
     setError("");
+    setEmailError("");
+    setPhoneError("");
+
+    const emailDomain = email.trim().toLowerCase().split("@")[1] || "";
+    if (!allowedEmailDomains.includes(emailDomain)) {
+      setEmailError("Invalid address.");
+      return;
+    }
+
+    if (!phoneRegex.test(phone)) {
+      setPhoneError("Phone number must start with +1.");
+      return;
+    }
+
     setIsLoading(true);
 
     try {
@@ -63,18 +82,35 @@ export default function RSVP() {
         <div className={styles.field}>
           <label className={styles.label}>Email</label>
           <input
-            className={styles.input}
+            className={`${styles.input} ${emailError ? styles.inputError : ""}`}
             type="email"
             placeholder="your@email.com"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              if (emailError) setEmailError("");
+            }}
             required
           />
+          {emailError && <p className={styles.fieldError}>{emailError}</p>}
         </div>
 
         <div className={styles.field}>
           <label className={styles.label}>Phone</label>
-          <input className={styles.input} type="tel" placeholder="+1 (000) 000-0000" />
+          <input
+            className={`${styles.input} ${phoneError ? styles.inputError : ""}`}
+            type="tel"
+            placeholder="+1 (555) 123-4567"
+            pattern="^\+1[\s-]?\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}$"
+            title="Enter a valid US phone number starting with +1, for example: +1 (555) 123-4567"
+            value={phone}
+            onChange={(e) => {
+              setPhone(e.target.value);
+              if (phoneError) setPhoneError("");
+            }}
+            required
+          />
+          {phoneError && <p className={styles.fieldError}>{phoneError}</p>}
         </div>
 
         <div className={styles.field}>
