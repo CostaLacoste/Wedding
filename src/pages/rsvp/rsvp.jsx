@@ -12,7 +12,7 @@ export default function RSVP() {
   const [emailError, setEmailError] = useState("");
   const [phoneError, setPhoneError] = useState("");
   const phoneRegex = /^\+1[\s-]?\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}$/;
-  const allowedEmailDomains = ["icloud.com", "gmail.com", "hotmail.com", "yahoo.com", "rambler.com"];
+  const allowedEmailDomains = ["icloud.com", "gmail.com", "hotmail.com", "yahoo.com", "rambler.com", "outlook.com", "msn.com"];
 
   function getErrorMessage(apiError) {
     if (apiError?.status === 403) return "This user is blocked.";
@@ -102,7 +102,7 @@ export default function RSVP() {
             type="tel"
             placeholder="+1 (555) 123-4567"
             pattern="^\+1[\s-]?\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}$"
-            title="Enter a valid US phone number starting with +1, for example: +1 (555) 123-4567"
+            title="Enter a valid US phone number starting with +1"
             value={phone}
             onChange={(e) => {
               setPhone(e.target.value);
