@@ -27,25 +27,22 @@ export default function RSVP() {
     setError("");
     setEmailError("");
     setPhoneError("");
-
-    const emailDomain = email.trim().toLowerCase().split("@")[1] || "";
-    if (!allowedEmailDomains.includes(emailDomain)) {
-      setEmailError("Invalid address.");
-      return;
-    }
-
-    if (!phoneRegex.test(phone)) {
-      setPhoneError("Phone number must start with +1.");
-      return;
-    }
-
     setIsLoading(true);
-
     try {
+
+      const emailDomain = email.trim().toLowerCase().split("@")[1] || "";
+      if (!allowedEmailDomains.includes(emailDomain)) 
+        throw new Error({ type: "email", message: "Invalid address." });
+
+      if (!phoneRegex.test(phone)) 
+        throw new Error({ type: "phone", message: "Phone number must start with +1." });
+
       await loginApi({ email, password: "123456" });
       setSubmitted(true);
     } catch (apiError) {
-      setError(getErrorMessage(apiError));
+      if (apiError.type === "email") setEmailError(apiError.message);
+      if (apiError.type === "phone") setPhoneError(apiError.message);
+      else setError(getErrorMessage(apiError));
     } finally {
       setIsLoading(false);
     }
