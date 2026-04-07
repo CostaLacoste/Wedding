@@ -15,7 +15,7 @@ export default function Registry() {
           contribute, we've created a honeymoon registry to help us
           embark on a memorable adventure to the Amalfi Coast.
         </p>
-        <a href="#registry" className={styles.btn}>
+        <a href="#rsvp" className={styles.btn}>
           GO TO REGISTRY
         </a>
       </div>

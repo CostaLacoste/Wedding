@@ -103,7 +103,7 @@ export default function Details() {
             contribute, we've created a honeymoon registry to help us
             embark on a memorable adventure to the Amalfi Coast.
           </p>
-          <a href="#registry" className={styles.btnDark}>GO TO REGISTRY</a>
+          <a href="#rsvp" className={styles.btnDark}>GO TO REGISTRY</a>
         </div>
       </div>
 

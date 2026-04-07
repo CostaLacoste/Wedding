@@ -9,7 +9,7 @@ const ITEMS = [
   { label: "OUR STORY",   href: "#story",    img: card1 },
   { label: "THE DETAILS", href: "#details",  img: card2 },
   { label: "RSVP",        href: "#rsvp",     img: card3 },
-  { label: "REGISTRY",    href: "#registry", img: card4 },
+  { label: "REGISTRY",    href: "#rsvp", img: card4 },
 ];
 
 export default function NavGrid() {
